@@ -16,17 +16,6 @@ public class MySQL implements Database{
 
     public Connection getConnection()
     {
-        if(MySql==null)
-        {
-            MySql =  new MySQL();
-            try {
-                connectionDataBase = DriverManager.getConnection(LocalDataBaseURL, user, password);
-                logger.logInfo("Create Connection to DataBase");
-            }
-            catch (SQLException e) {
-                logger.logError(e.getMessage());
-            }
-        }
         return connectionDataBase;
     }
 }
