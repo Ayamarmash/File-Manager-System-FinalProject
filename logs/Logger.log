@@ -1,1 +1,6 @@
 2022-12-24T14:34:36.449424100 [INFO] Welcome
+2022-12-24T15:25:14.390044100 [Error] Access denied for user 'root'@'localhost' (using password: YES)
+2022-12-24T15:25:17.403242900 [Error] Access denied for user 'root'@'localhost' (using password: YES)
+2022-12-24T15:25:48.818990100 [Error] Access denied for user 'root'@'localhost' (using password: YES)
+2022-12-24T15:26:28.617977 [Error] Access denied for user 'root'@'localhost' (using password: YES)
+2022-12-24T15:30:31.425215400 [INFO] Create Connection to DataBase
