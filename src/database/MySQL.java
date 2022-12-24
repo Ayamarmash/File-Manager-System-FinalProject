@@ -1,6 +1,6 @@
-package Database;
+package database;
 
-import Logger.Logger;
+import logger.Logger;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

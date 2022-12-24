@@ -1,4 +1,4 @@
-package Features;
+package features;
 
 public class ManagerFileFactory {
     public ManagingFile getOperationType(String operationType){

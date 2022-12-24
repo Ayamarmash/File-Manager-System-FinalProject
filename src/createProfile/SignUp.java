@@ -1,4 +1,4 @@
-package CreateProfile;
+package createProfile;
 
 public class SignUp {
 }

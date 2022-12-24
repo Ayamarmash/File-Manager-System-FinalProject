@@ -10,7 +10,7 @@ public class Logger {
 
     private static final Logger instance = new Logger();
 
-    public  String logname = "Logger";
+    public  String logname = "logger";
     protected String env = System.getProperty("user.dir");
     private static File logFile;
 

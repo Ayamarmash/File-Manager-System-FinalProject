@@ -1,4 +1,4 @@
-package Features;
+package features;
 
 import java.sql.Connection;
 
