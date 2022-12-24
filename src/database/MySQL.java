@@ -5,8 +5,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class MySQL {
-
+public class MySQL implements Database{
+    
     private static MySQL MySql = null;
 
     Logger logger;
