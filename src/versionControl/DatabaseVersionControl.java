@@ -27,4 +27,9 @@ public void createSnapshot(Connection connection) {
             e.printStackTrace();
         }
     }
+     @Override
+    public void Snap(Connection database) {
+
+        createSnapshot(database);
+    }
 }
