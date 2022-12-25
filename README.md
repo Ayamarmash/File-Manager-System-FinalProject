@@ -7,4 +7,4 @@
 Project link report here: [por-report .pdf](https://github.com/Ayamarmash/File-Manager-System-FinalProject/files/10300784/por-report.pdf)
 
 
-[File Management System.pptx](https://github.com/Ayamarmash/File-Manager-System-FinalProject/files/10300790/File.Management.System.pptx)
+slide presentation: [File Management System.pptx](https://github.com/Ayamarmash/File-Manager-System-FinalProject/files/10300790/File.Management.System.pptx)
