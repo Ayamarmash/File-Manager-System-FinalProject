@@ -3,10 +3,9 @@ package features;
 import java.sql.Connection;
 import logger.Logger;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.Scanner;
-public class DeleteFile implements ManagingFile {
+public class DeleteFile implements IManagingFile {
     @Override
     public void FileFeature(Connection database) {
         delete(database);

@@ -3,7 +3,7 @@ package versionControl;
 
 import java.sql.Connection;
 
-public interface VersionControl {
+public interface IVersionControl {
 
     void Snap(Connection database);
 }

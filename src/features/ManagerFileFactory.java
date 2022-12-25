@@ -1,17 +1,17 @@
 package features;
 
 public class ManagerFileFactory {
-    public ManagingFile getOperationType(String operationType){
+    public IManagingFile getOperationType(String operationType){
 
         switch(operationType) {
             case "IMPORT":
-                return (ManagingFile) new ImportFile();
+                return (IManagingFile) new ImportFile();
             case "EXPORT":
-                return (ManagingFile) new ExportFile();
+                return (IManagingFile) new ExportFile();
             case "DELETE":
-                return (ManagingFile) new DeleteFile();
+                return (IManagingFile) new DeleteFile();
             case "FILE_LIST":
-                return (ManagingFile) new ListOfFiles();
+                return (IManagingFile) new ListOfFiles();
         }
         return null;
     }

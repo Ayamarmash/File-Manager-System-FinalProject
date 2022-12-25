@@ -6,7 +6,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class ListOfFiles implements ManagingFile {
+public class ListOfFiles implements IManagingFile {
     @Override
     public void FileFeature(Connection database) {
         list(database);

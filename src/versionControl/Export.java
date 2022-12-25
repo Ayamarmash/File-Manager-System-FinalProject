@@ -5,7 +5,7 @@ import logger.Logger;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Scanner;
-public class Export implements VersionControl{
+public class Export implements IVersionControl {
     @Override
     public void Snap(Connection database) {
 

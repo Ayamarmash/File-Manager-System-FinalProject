@@ -4,7 +4,7 @@ import logger.Logger;
 import java.sql.*;
 import java.util.Scanner;
 
-public class DatabaseVersionControl implements VersionControl{
+public class DatabaseVersionControl implements IVersionControl {
 
     Logger log;
 

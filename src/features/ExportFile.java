@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
-public class ExportFile implements ManagingFile {
+public class ExportFile implements IManagingFile {
 
     @Override
     public void FileFeature(Connection database) {

@@ -2,7 +2,7 @@ package versionControl;
 
 public class Factory {
 
-    public static VersionControl GetSnapShot(String typeFile){
+    public static IVersionControl GetSnapShot(String typeFile){
 
         switch(typeFile) {
             case "EXPORT":

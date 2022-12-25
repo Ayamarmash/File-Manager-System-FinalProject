@@ -5,17 +5,15 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class MySQL implements Database{
-    
-    private static MySQL MySql = null;
-
+public class MySQL implements IDatabase {
     Logger logger;
-    Logger logs;
-    private String LocalDataBaseURL = "jdbc:mysql://localhost:3306/sys";
+    Connection connectionDataBase = null;
+
+    private static MySQL MySql = null;
+    private String localDataBaseURL = "jdbc:mysql://localhost:3306/sys";
     private String user = "root";
     private String password = "aya123";
 
-    Connection connectionDataBase = null;
     public Connection getConnection()
     {
 
@@ -24,7 +22,7 @@ public class MySQL implements Database{
             MySql =  new MySQL();
 
             try {
-                connectionDataBase = DriverManager.getConnection(LocalDataBaseURL, user, password);
+                connectionDataBase = DriverManager.getConnection(localDataBaseURL, user, password);
                 logger.logInfo("Create Connection to DataBase");
 
             }

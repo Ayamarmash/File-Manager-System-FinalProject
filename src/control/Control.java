@@ -3,25 +3,25 @@ package control;
 import createProfile.Login;
 import createProfile.SignUp;
 import database.MySQL;
+import features.IManagingFile;
 import features.ManagerFileFactory;
-import features.ManagingFile;
 import logger.Logger;
 
 import versionControl.Factory;
-import versionControl.VersionControl;
-
+import versionControl.IVersionControl;
+import database.IDatabase;
 import java.sql.Connection;
 import java.util.Scanner;
 
 public class Control {
 
     static Logger log;
-    static MySQL mySQL = new MySQL();
+    static IDatabase mySQL = new MySQL();
 
-    public static int Login(Connection connection)
+    public static int Login(Connection Database)
     {
         log.logInfo("Login in Profile");
-        return Login.loginApplication(connection);
+        return Login.loginApplication(Database);
     }
     public static void  SignUp(Connection Database) {
         log.logInfo("Create Profile");
@@ -50,7 +50,7 @@ public class Control {
             }
         }
     }
-    public static void Admin(Connection DataBase) {
+    private static void Admin(Connection DataBase) {
         ManagerFileFactory  managerFileFactory = new ManagerFileFactory();
 
         boolean  exit =true;
@@ -72,21 +72,21 @@ public class Control {
 
                 switch (choice) {
                     case 1:
-                        ManagingFile imp = managerFileFactory.getOperationType("IMPORT");
+                        IManagingFile imp = managerFileFactory.getOperationType("IMPORT");
                         imp.FileFeature(DataBase);
 
                         break;
                     case 2:
-                        ManagingFile export = managerFileFactory.getOperationType("EXPORT");
+                        IManagingFile export = managerFileFactory.getOperationType("EXPORT");
                         export.FileFeature(DataBase);
                         break;
                     case 3:
-                        ManagingFile delete = managerFileFactory.getOperationType("DELETE");
+                        IManagingFile delete = managerFileFactory.getOperationType("DELETE");
                         delete.FileFeature(DataBase);
 
                         break;
                     case 4:
-                        ManagingFile lis = managerFileFactory.getOperationType("FILE_LIST");
+                        IManagingFile lis = managerFileFactory.getOperationType("FILE_LIST");
                         lis.FileFeature(DataBase);
                         break;
                     case 5:
@@ -121,15 +121,15 @@ public class Control {
                 int choice = keyboard.nextInt();
                 switch (choice) {
                     case 1:
-                        ManagingFile imp = managerFileFactory.getOperationType("IMPORT");
+                        IManagingFile imp = managerFileFactory.getOperationType("IMPORT");
                         imp.FileFeature(DataBase);
                         break;
                     case 2:
-                        ManagingFile export = managerFileFactory.getOperationType("EXPORT");
+                        IManagingFile export = managerFileFactory.getOperationType("EXPORT");
                         export.FileFeature(DataBase);
                         break;
                     case 3:
-                        ManagingFile lis = managerFileFactory.getOperationType("FILE_LIST");
+                        IManagingFile lis = managerFileFactory.getOperationType("FILE_LIST");
                         lis.FileFeature(DataBase);
                         break;
                     case 4:
@@ -164,11 +164,11 @@ public class Control {
                 switch (choice) {
 
                     case 1:
-                        ManagingFile export = managerFileFactory.getOperationType("EXPORT");
+                        IManagingFile export = managerFileFactory.getOperationType("EXPORT");
                         export.FileFeature(DataBase);
                         break;
                     case 2:
-                        ManagingFile lis = managerFileFactory.getOperationType("FILE_LIST");
+                        IManagingFile lis = managerFileFactory.getOperationType("FILE_LIST");
                         lis.FileFeature(DataBase);
                         break;
                     case 3:
@@ -183,7 +183,7 @@ public class Control {
         }while (exit);
 
     }
-    private static void VersionControl(Connection dataBase) {
+    private static void VersionControl(Connection DataBase) {
 
         try {
 
@@ -196,12 +196,12 @@ public class Control {
 
             switch(input) {
                 case 1:
-                    VersionControl version = Factory.GetSnapShot("VERSION");
-                    version.Snap(dataBase);
+                    IVersionControl version = Factory.GetSnapShot("VERSION");
+                    version.Snap(DataBase);
                     break;
                 case 2:
-                    VersionControl Export = Factory.GetSnapShot("EXPORT");
-                    Export.Snap(dataBase);
+                    IVersionControl Export = Factory.GetSnapShot("EXPORT");
+                    Export.Snap(DataBase);
                     break;
                 default:
             }
