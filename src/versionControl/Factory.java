@@ -1,4 +1,4 @@
-package versioncontrol;
+package versionControl;
 
 public class Factory {
 

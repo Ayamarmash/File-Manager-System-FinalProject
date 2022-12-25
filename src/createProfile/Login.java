@@ -2,6 +2,7 @@ package createProfile;
 
 
 import logger.Logger;
+import exception.LoginException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -21,7 +22,7 @@ public class Login {
         
     {
         String exception = null;
-        
+
 
         Scanner keyboard = new Scanner (System.in);
         System.out.println("Enter your Email : ");

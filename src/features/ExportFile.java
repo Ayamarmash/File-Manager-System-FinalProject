@@ -10,7 +10,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
-
 public class ExportFile implements ManagingFile {
 
     @Override
@@ -51,34 +50,33 @@ public class ExportFile implements ManagingFile {
         } catch (IOException e) {
             log.logError(e.getMessage());
             throw new RuntimeException(e);
-
         }
-        finally {
-            if (rs != null) {
-                try {
-                    rs.close();
-                } catch (SQLException e) {
-                    log.logError(e.getMessage());
-                    throw new RuntimeException(e);
+            finally {
+                if (rs != null) {
+                    try {
+                        rs.close();
+                    } catch (SQLException e) {
+                        log.logError(e.getMessage());
+                        throw new RuntimeException(e);
+                    }
                 }
-            }
-            if (stmt != null) {
-                try {
-                    stmt.close();
-                } catch (SQLException e) {
-                    log.logError(e.getMessage());
-                    throw new RuntimeException(e);
+                if (stmt != null) {
+                    try {
+                        stmt.close();
+                    } catch (SQLException e) {
+                        log.logError(e.getMessage());
+                        throw new RuntimeException(e);
 
+                    }
                 }
-            }
-            if (writer != null) {
-                try {
-                    writer.close();
-                } catch (IOException e) {
-                    log.logError(e.getMessage());
-                    throw new RuntimeException(e);
+                if (writer != null) {
+                    try {
+                        writer.close();
+                    } catch (IOException e) {
+                        log.logError(e.getMessage());
+                        throw new RuntimeException(e);
+                    }
                 }
             }
         }
     }
-}

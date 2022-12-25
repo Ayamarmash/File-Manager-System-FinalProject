@@ -1,4 +1,4 @@
-package createprofile;
+package createProfile;
 import logger.Logger;
 
 import java.sql.Connection;

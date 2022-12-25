@@ -1,11 +1,10 @@
-package versioncontrol;
+package versionControl;
 
 import logger.Logger;
 
-import java.sql.;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Scanner;
-
 public class Export implements VersionControl{
     @Override
     public void Snap(Connection database) {
@@ -16,15 +15,15 @@ public class Export implements VersionControl{
     int version;
     private ArrayList<String> tables;
     private String databaseName;
-    
-     public void rollback( Connection connection) {
+
+    public void rollback( Connection connection) {
         try {
             System.out.println("Enter your version: ");
             Scanner scanner = new Scanner(System.in);
             version = scanner.nextInt();
             Statement stmt = connection.createStatement();
 
-                stmt.executeUpdate("DROP TABLE files");
+            stmt.executeUpdate("DROP TABLE files");
 
         } catch (SQLException e) {
             log.logError(e.getMessage());
@@ -33,12 +32,11 @@ public class Export implements VersionControl{
 
         try {
             Statement stmt = connection.createStatement();
-               stmt.executeUpdate("CREATE TABLE files" + " AS SELECT FROM snapshot_" + version);
+            stmt.executeUpdate("CREATE TABLE files" + " AS SELECT * FROM snapshot_" + version);
 
         } catch (SQLException e) {
             log.logError(e.getMessage());
             e.printStackTrace();
         }
-   
     }
 }

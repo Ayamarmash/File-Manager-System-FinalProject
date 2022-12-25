@@ -11,7 +11,7 @@ public class MySQL implements Database{
 
     Logger logger;
     Logger logs;
-    private String LocalDataBaseURL = "jdbc:mysql://localhost:3306/files";
+    private String LocalDataBaseURL = "jdbc:mysql://localhost:3306/sys";
     private String user = "root";
     private String password = "aya123";
 
