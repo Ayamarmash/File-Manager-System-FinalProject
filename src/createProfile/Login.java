@@ -18,8 +18,10 @@ public class Login {
 
 
     public static int loginApplication(Connection connection)
+        
     {
-
+        String exception = null;
+        
 
         Scanner keyboard = new Scanner (System.in);
         System.out.println("Enter your Email : ");
@@ -41,6 +43,7 @@ public class Login {
                 }
             }
 
+            throw new LoginException(exception);
 
         }
         catch (Exception e) {
